@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".productForm"
+    android:background="@color/ThemeGreen">
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"
+        android:id="@+id/AddressContainer">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignStart="@+id/productName"
+            android:text="@string/enter_your_product_name"
+            android:textSize="25dp"
+            android:textStyle="bold"
+            android:id="@+id/EnterProductName"/>
+        <EditText
+            android:layout_width="373dp"
+            android:layout_height="wrap_content"
+            android:background="@color/white"
+            android:hint="eg. Ambrane Type-C cable"
+            android:layout_marginTop="15dp"
+            android:layout_below="@+id/EnterProductName"
+            android:paddingVertical="15dp"
+            android:paddingStart="15dp"
+            android:id="@+id/productName"
+            tools:ignore="RtlSymmetry" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignStart="@+id/productName"
+            android:layout_below="@+id/productName"
+            android:text="Enter Your Product Details"
+            android:textSize="25dp"
+            android:layout_marginTop="15dp"
+            android:textStyle="bold"
+            android:id="@+id/EnterDetails"/>
+        <EditText
+            android:layout_width="373dp"
+            android:layout_height="wrap_content"
+            android:background="@color/white"
+            android:hint="eg. Ambrane Type c data cable white color"
+            android:lines="8"
+            android:minLines="1"
+            android:maxLines="8"
+            android:paddingVertical="15dp"
+            android:paddingStart="15dp"
+            android:layout_marginTop="15dp"
+            android:layout_below="@+id/EnterDetails"
+            android:id="@+id/enterDetails"
+            tools:ignore="RtlSymmetry" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/productName"
+            android:layout_below="@+id/enterDetails"
+            android:text="Enter Your Expected Price"
+            android:textSize="25dp"
+            android:layout_marginTop="15dp"
+            android:textStyle="bold"
+            android:id="@+id/Price"/>
+        <EditText
+            android:layout_width="373dp"
+            android:layout_height="wrap_content"
+            android:background="@color/white"
+            android:hint="eg. 150"
+            android:inputType="number"
+            android:paddingVertical="15dp"
+            android:paddingLeft="15dp"
+            android:layout_marginTop="15dp"
+            android:layout_below="@+id/Price"
+            android:id="@+id/price"/>
+        <EditText
+            android:layout_width="373dp"
+            android:layout_height="wrap_content"
+            android:background="@color/white"
+            android:hint="Working/Not Working"
+            android:paddingVertical="15dp"
+            android:paddingLeft="15dp"
+            android:layout_marginTop="15dp"
+            android:layout_below="@+id/price"
+            android:id="@+id/workingOrNot"/>
+        <EditText
+            android:layout_width="373dp"
+            android:layout_height="wrap_content"
+            android:background="@color/white"
+            android:hint="Damaged Or Not"
+            android:paddingVertical="15dp"
+            android:paddingLeft="15dp"
+            android:layout_marginTop="15dp"
+            android:layout_below="@+id/workingOrNot"
+            android:id="@+id/damage"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/productName"
+            android:layout_below="@+id/damage"
+            android:text="Details about Damage (Optional)"
+            android:textSize="25dp"
+            android:layout_marginTop="15dp"
+            android:textStyle="bold"
+            android:id="@+id/Damage"/>
+        <EditText
+            android:layout_width="373dp"
+            android:layout_height="wrap_content"
+            android:background="@color/white"
+            android:hint="eg. Broken from one side"
+            android:paddingVertical="15dp"
+            android:paddingLeft="15dp"
+            android:layout_marginTop="15dp"
+            android:layout_below="@+id/Damage"
+            android:id="@+id/detailAboutDamage"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/productName"
+            android:layout_below="@+id/detailAboutDamage"
+            android:text="Purchase Date"
+            android:textSize="25dp"
+            android:layout_marginTop="15dp"
+            android:textStyle="bold"
+            android:id="@+id/InvoiceDate"/>
+        <TextView
+            android:layout_width="373dp"
+            android:layout_height="wrap_content"
+            android:background="@color/white"
+            android:text="Invoice Date"
+            android:paddingVertical="17dp"
+            android:paddingLeft="15dp"
+            android:layout_marginTop="13dp"
+            android:layout_below="@+id/InvoiceDate"
+            android:id="@+id/date"/>
+
+    </RelativeLayout>
+    <LinearLayout
+        android:layout_width="371dp"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@id/AddressContainer"
+        android:layout_marginTop="15dp"
+        android:id="@+id/termsAndConditions">
+        <CheckBox
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/Mycheckbox"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="I agree to All Terms and Conditions"
+            android:textColor="@color/white"
+            android:textStyle="italic"
+            android:textSize="15dp"/>
+    </LinearLayout>
+    <Button
+        android:layout_width="371dp"
+        android:layout_height="60dp"
+        android:layout_centerHorizontal="true"
+        android:text="Submit"
+        android:textSize="30dp"
+        android:layout_below="@+id/termsAndConditions"
+        android:layout_marginTop="10dp"
+        android:backgroundTint="@color/ThemeBlue"
+        android:id="@+id/nextBtn"/>
+
+</RelativeLayout>

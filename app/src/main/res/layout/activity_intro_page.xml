@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".IntroPage"
+    android:background="@color/ThemeGreen">
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:id="@+id/container">
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="eSwachta"
+        android:textSize="48dp"
+        android:textStyle="bold|italic"
+        android:textColor="@color/white"
+        android:layout_marginTop="0dp"
+        android:layout_centerInParent="true"
+        android:id="@+id/heading"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Smart Solution to e-Waste"
+        android:textSize="15dp"
+        android:layout_below="@+id/heading"
+        android:layout_marginTop="0dp"
+        android:textStyle="italic"
+        android:textColor="@color/white"
+        android:layout_alignRight="@+id/heading"
+        android:id="@+id/subheading"/>
+    </RelativeLayout>
+
+
+</RelativeLayout>

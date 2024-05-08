@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".registerPage"
+    android:background="@color/ThemeGreen">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Welcome To eSwachta"
+        android:layout_centerHorizontal="true"
+        android:textColor="@color/white"
+        android:textStyle="italic|bold"
+        android:textSize="33dp"
+        android:layout_marginTop="80dp"
+        android:id="@+id/RegisterHeading"/>
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:id="@+id/DetailsContainer"
+        android:layout_marginTop="70dp"
+        android:layout_below="@+id/RegisterHeading">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Enter Your Full Name"
+            android:layout_centerHorizontal="true"
+            android:textColor="@color/white"
+            android:textSize="23dp"
+            android:layout_alignLeft="@+id/name"
+            android:id="@+id/EnterName"/>
+
+        <EditText
+            android:layout_width="320dp"
+            android:layout_height="wrap_content"
+            android:background="@color/white"
+            android:inputType="text"
+            android:hint="Rohan Mishra"
+            android:layout_marginTop="5dp"
+            android:layout_below="@+id/EnterName"
+            android:paddingVertical="15dp"
+            android:paddingLeft="15dp"
+            android:id="@+id/name"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Enter Your Email address"
+            android:layout_below="@+id/name"
+            android:layout_centerHorizontal="true"
+            android:textColor="@color/white"
+            android:textSize="23dp"
+            android:layout_marginTop="10dp"
+            android:layout_alignLeft="@+id/name"
+            android:id="@+id/EnterEmail"/>
+        <EditText
+            android:layout_width="320dp"
+            android:layout_height="wrap_content"
+            android:background="@color/white"
+            android:inputType="textEmailAddress"
+            android:hint="abcd@gmail.com"
+            android:layout_marginTop="5dp"
+            android:paddingVertical="15dp"
+            android:paddingLeft="15dp"
+            android:layout_below="@+id/EnterEmail"
+            android:id="@+id/email"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Enter Your Email address"
+            android:layout_below="@+id/email"
+            android:layout_centerHorizontal="true"
+            android:textColor="@color/white"
+            android:textSize="23dp"
+            android:layout_marginTop="10dp"
+            android:layout_alignLeft="@+id/name"
+            android:id="@+id/EnterPass"/>
+        <EditText
+            android:layout_width="320dp"
+            android:layout_height="wrap_content"
+            android:background="@color/white"
+            android:hint="Use A Strong Password"
+            android:inputType="textPassword"
+            android:paddingVertical="15dp"
+            android:paddingLeft="15dp"
+            android:layout_marginTop="10dp"
+            android:layout_below="@+id/EnterPass"
+            android:id="@+id/password"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Enter Your Mobile Number"
+            android:layout_below="@+id/password"
+            android:layout_centerHorizontal="true"
+            android:textColor="@color/white"
+            android:textSize="23dp"
+            android:layout_marginTop="10dp"
+            android:layout_alignLeft="@+id/name"
+            android:id="@+id/EnterMobile"/>
+        <EditText
+            android:layout_width="320dp"
+            android:layout_height="wrap_content"
+            android:background="@color/white"
+            android:hint="8222002540"
+            android:inputType="number"
+            android:paddingVertical="15dp"
+            android:paddingLeft="15dp"
+            android:layout_marginTop="10dp"
+            android:layout_below="@+id/EnterMobile"
+            android:id="@+id/mobile"/>
+    </RelativeLayout>
+
+    <Button
+        android:id="@+id/RegisterButton"
+        android:layout_width="320dp"
+        android:layout_height="60dp"
+        android:layout_below="@+id/DetailsContainer"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="140dp"
+        android:backgroundTint="#3F51B5"
+        android:text="Register"
+        android:textSize="20dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Already have an Account? SignIn"
+        android:textColor="@color/ThemeBlue"
+        android:backgroundTint="@color/ThemeGreen"
+        android:textStyle="bold|italic"
+        android:textSize="18dp"
+        android:layout_below="@+id/RegisterButton"
+        android:layout_centerHorizontal="true"
+        android:id="@+id/LoginText"/>
+
+</RelativeLayout>

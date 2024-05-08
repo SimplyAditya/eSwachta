@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.gallery.GalleryFragment" >
+
+    <TextView
+        android:layout_width="371dp"
+        android:layout_height="wrap_content"
+        android:text="Nearby e-waste Facilities"
+        android:background="@color/ThemeBlue"
+        android:textColor="@color/white"
+        android:textAlignment="center"
+        android:textSize="32dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="50dp"
+        android:paddingVertical="10dp"
+        android:textStyle="italic|bold"
+        android:id="@+id/MainHeading"/>
+
+    <RelativeLayout
+        android:layout_width="371dp"
+        android:layout_height="200dp"
+        android:background="@color/ThemeBlue"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@+id/MainHeading"
+        android:layout_marginTop="20dp"
+        android:id="@+id/Layout1">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:text="Shukla E-Waste Processor"
+            android:textSize="20dp"
+            android:textColor="@color/white"
+            android:layout_marginTop="5dp"
+            android:id="@+id/Heading1"/>
+        <ImageView
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:src="@drawable/facility1"
+            android:background="@color/white"
+            android:layout_below="@+id/Heading1"
+            android:layout_marginTop="5dp"
+            android:layout_marginLeft="10dp"
+            android:id="@+id/image"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Bhiwadi, Rajasthan"
+            android:textSize="15dp"
+            android:layout_alignTop="@+id/image"
+            android:layout_toRightOf="@+id/image"
+            android:textColor="@color/white"
+            android:layout_marginTop="5dp"
+            android:layout_marginLeft="10dp"
+            android:id="@+id/location"/>
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Google Maps"
+        android:textColor="@color/white"
+        android:layout_toRightOf="@+id/image"
+        android:layout_below="@+id/location"
+        android:layout_marginTop="55dp"
+        android:layout_marginLeft="15dp"
+        android:id="@+id/googlemapBtn"/>
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="371dp"
+        android:layout_height="200dp"
+        android:background="@color/ThemeBlue"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@+id/Layout1"
+        android:layout_marginTop="20dp"
+        android:id="@+id/Layout2">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:text="EWASTER"
+            android:textSize="20dp"
+            android:textColor="@color/white"
+            android:layout_marginTop="5dp"
+            android:id="@+id/Heading2"/>
+        <ImageView
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:src="@drawable/facility2"
+            android:background="@color/white"
+            android:layout_below="@+id/Heading2"
+            android:layout_marginTop="5dp"
+            android:layout_marginLeft="10dp"
+            android:id="@+id/image1"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Gurugram, Haryana"
+            android:textSize="15dp"
+            android:layout_alignTop="@+id/image1"
+            android:layout_toRightOf="@+id/image1"
+            android:textColor="@color/white"
+            android:layout_marginTop="5dp"
+            android:layout_marginLeft="10dp"
+            android:id="@+id/location1"/>
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Google Maps"
+            android:textColor="@color/white"
+            android:layout_toRightOf="@+id/image1"
+            android:layout_below="@+id/location1"
+            android:layout_marginTop="55dp"
+            android:layout_marginLeft="15dp"
+            android:id="@+id/googlemapBtn1"/>
+    </RelativeLayout>
+
+
+
+
+
+</RelativeLayout>
