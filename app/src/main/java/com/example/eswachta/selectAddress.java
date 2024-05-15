@@ -19,13 +19,35 @@ import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.OnFailureListener;
+import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.Firebase;
+import com.google.firebase.auth.AuthResult;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.firestore.DocumentReference;
+import com.google.firebase.firestore.FirebaseFirestore;
+
+import java.util.HashMap;
+import java.util.Map;
+
+
 public class selectAddress extends AppCompatActivity {
     EditText[] arry;
     private static final int LOCATION_PERMISSION_REQUEST_CODE = 100;
     Button locationBtn,nextBtn;
     int pressed=0;
+    private FirebaseAuth mAuth;
+    String name, email, password,mobile,hNo,addressLine1,addressLine2,city,State,Pincode,Landmark;
+    FirebaseFirestore db=FirebaseFirestore.getInstance();
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        mAuth=FirebaseAuth.getInstance();
+        name=getIntent().getStringExtra("name");
+        email=getIntent().getStringExtra("email");
+        password=getIntent().getStringExtra("password");
+        mobile=getIntent().getStringExtra("mobile");
         super.onCreate(savedInstanceState);
         EdgeToEdge.enable(this);
         setContentView(R.layout.activity_select_address);
@@ -58,7 +80,7 @@ public class selectAddress extends AppCompatActivity {
                 if (gpsTracker.canGetLocation()) {
                     double latitude = gpsTracker.getLatitude();
                     double longitude = gpsTracker.getLongitude();
-                    Toast.makeText(selectAddress.this, "Location Stored", Toast.LENGTH_LONG).show();
+                    Toast.makeText(selectAddress.this, "Location Stored", Toast.LENGTH_SHORT).show();
                 } else {
                     gpsTracker.showSettingsAlert();
                 }
@@ -72,9 +94,15 @@ public class selectAddress extends AppCompatActivity {
         nextBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                hNo=arry[0].getText().toString().trim();
+                addressLine1=arry[1].getText().toString().trim();
+                addressLine2=arry[2].getText().toString().trim();
+                city=arry[3].getText().toString().trim();
+                State=arry[4].getText().toString().trim();
+                Pincode=arry[5].getText().toString().trim();
                 for(int i=0;i<6;i++){
                     if(arry[i].getText().toString().trim().isEmpty()){
-                        Toast.makeText(selectAddress.this, "Mandatory Fields are Empty", Toast.LENGTH_LONG).show();
+                        Toast.makeText(selectAddress.this, "Mandatory Fields are Empty", Toast.LENGTH_SHORT).show();
                         pressed=2;
                     }
                     else{
@@ -86,9 +114,53 @@ public class selectAddress extends AppCompatActivity {
                         Toast.makeText(selectAddress.this, "Precise Location Not Picked", Toast.LENGTH_SHORT).show();
                         break;
                     case 1:
-                        Intent nextPage=new Intent(selectAddress.this,HomeScreen.class);
-                        startActivity(nextPage);
-                        finish();
+                        mAuth.createUserWithEmailAndPassword(email, password)
+                                .addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+                                    @Override
+                                    public void onComplete(@NonNull Task<AuthResult> task) {
+                                        if (task.isSuccessful()) {
+                                            //Sign Up Successful
+                                            Map<String, Object> user = new HashMap<>();
+                                            user.put("name", name);
+                                            user.put("email", email);
+                                            user.put("mobile", mobile);
+                                            user.put("hNo", hNo);
+                                            user.put("addressLine1", addressLine1);
+                                            user.put("addressLine2", addressLine2);
+                                            user.put("city", city);
+                                            user.put("state", State);
+                                            user.put("pincode",Pincode);
+
+                                            // Add a new document with a generated ID
+                                            db.collection("usersInfo")
+                                                    .document(email).set(user)
+                                                    .addOnSuccessListener(new OnSuccessListener<Void>() {
+                                                        @Override
+                                                        public void onSuccess(Void aVoid) {
+                                                            Toast.makeText(selectAddress.this, "Registration Successful", Toast.LENGTH_SHORT).show();
+                                                            Intent nextPage=new Intent(selectAddress.this,HomeScreen.class);
+                                                            startActivity(nextPage);
+                                                            finish();
+                                                        }
+                                                    })
+                                                    .addOnFailureListener(new OnFailureListener() {
+                                                        @Override
+                                                        public void onFailure(@NonNull Exception e) {
+                                                            Toast.makeText(selectAddress.this, "Error Uploading Data", Toast.LENGTH_SHORT).show();
+                                                            Intent error =new Intent(selectAddress.this,MainActivity.class);
+                                                            startActivity(error);
+                                                            finish();
+                                                        }
+                                                    });
+
+
+                                        } else {
+                                            // sign Up fails,.
+                                            Toast.makeText(selectAddress.this, "Registration Failed", Toast.LENGTH_SHORT).show();
+                                            Intent failure=new Intent(selectAddress.this,MainActivity.class);
+                                        }
+                                    }
+                                });
                         break;
                     default:
                         break;

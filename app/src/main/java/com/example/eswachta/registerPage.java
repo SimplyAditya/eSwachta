@@ -18,8 +18,11 @@ public class registerPage extends AppCompatActivity {
     TextView register;
     EditText name,username,pass,number;
     Button nextBtn;
+    String myName,email,password,mobile;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
         super.onCreate(savedInstanceState);
         EdgeToEdge.enable(this);
         setContentView(R.layout.activity_register_page);
@@ -43,22 +46,31 @@ public class registerPage extends AppCompatActivity {
             }
         });
         nextBtn.setOnClickListener(new View.OnClickListener() {
+
             @Override
             public void onClick(View v) {
-                if(name.getText().toString().trim().isEmpty()){
+                myName = name.getText().toString().trim();
+                email=username.getText().toString().trim();
+                password=pass.getText().toString().trim();
+                mobile=number.getText().toString().trim();
+                if(myName.isEmpty()){
                     Toast.makeText(registerPage.this, "Name Can't be Empty", Toast.LENGTH_SHORT).show();
                 }
-                else if(username.getText().toString().trim().isEmpty()){
+                else if(email.isEmpty()){
                     Toast.makeText(registerPage.this, "Email Can't Be Empty", Toast.LENGTH_SHORT).show();
                 }
-                else if(pass.getText().toString().trim().isEmpty()){
+                else if(password.isEmpty()){
                     Toast.makeText(registerPage.this, "Password Can't Be Empty", Toast.LENGTH_SHORT).show();
-                } else if (number.getText().toString().trim().isEmpty()) {
+                } else if (mobile.isEmpty()) {
                     Toast.makeText(registerPage.this, "Mobile Number Can't Be Empty", Toast.LENGTH_SHORT).show();
-                } else if (number.getText().toString().length()!=10) {
+                } else if (mobile.length()!=10) {
                     Toast.makeText(registerPage.this, "Enter Valid Mobile Number", Toast.LENGTH_SHORT).show();
                 } else{
                     Intent address=new Intent(registerPage.this, selectAddress.class);
+                    address.putExtra("name",myName);
+                    address.putExtra("email",email);
+                    address.putExtra("password",password);
+                    address.putExtra("mobile",mobile);
                     startActivity(address);
                     ;
                 }

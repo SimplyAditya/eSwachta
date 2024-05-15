@@ -16,6 +16,7 @@ import androidx.navigation.ui.NavigationUI;
 import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.appcompat.app.AppCompatActivity;
 import com.example.eswachta.databinding.ActivityHomeScreenBinding;
+import com.google.firebase.auth.FirebaseAuth;
 
 public class HomeScreen extends AppCompatActivity {
 
@@ -63,6 +64,7 @@ private ActivityHomeScreenBinding binding;
 
         if (id == R.id.nav_logout) { // Replace `some_menu_item` with the actual ID from your menu XML
             // Perform the action for this menu item
+            FirebaseAuth.getInstance().signOut();
             Intent goToHome=new Intent(this, MainActivity.class);
             startActivity(goToHome);
             finish();

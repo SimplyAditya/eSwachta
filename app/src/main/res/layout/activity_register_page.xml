@@ -71,7 +71,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Enter Your Email address"
+            android:text="Enter Your Passsword"
             android:layout_below="@+id/email"
             android:layout_centerHorizontal="true"
             android:textColor="@color/white"

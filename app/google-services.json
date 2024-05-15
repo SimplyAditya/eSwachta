@@ -1,13 +1,13 @@
 {
   "project_info": {
-    "project_number": "565074674670",
-    "project_id": "eswachta",
-    "storage_bucket": "eswachta.appspot.com"
+    "project_number": "678134753277",
+    "project_id": "eswachta-1402",
+    "storage_bucket": "eswachta-1402.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:565074674670:android:6bea977f3ce86aee83c4ff",
+        "mobilesdk_app_id": "1:678134753277:android:e3c3c2fe71bc0089a29b94",
         "android_client_info": {
           "package_name": "com.example.eswachta"
         }
@@ -15,7 +15,7 @@
       "oauth_client": [],
       "api_key": [
         {
-          "current_key": "AIzaSyCErNsNz2ZCNKxNupZG6j68jUGLkK85nro"
+          "current_key": "AIzaSyB7k2f130tE9hWfqQVU_sdOjTGAPnqvJo4"
         }
       ],
       "services": {

@@ -9,9 +9,9 @@
               <option name="connection">
                 <ConnectionSetting>
                   <option name="appId" value="com.example.eswachta" />
-                  <option name="mobileSdkAppId" value="1:565074674670:android:6bea977f3ce86aee83c4ff" />
-                  <option name="projectId" value="eswachta" />
-                  <option name="projectNumber" value="565074674670" />
+                  <option name="mobileSdkAppId" value="1:678134753277:android:e3c3c2fe71bc0089a29b94" />
+                  <option name="projectId" value="eswachta-1402" />
+                  <option name="projectNumber" value="678134753277" />
                 </ConnectionSetting>
               </option>
               <option name="signal" value="SIGNAL_UNSPECIFIED" />
