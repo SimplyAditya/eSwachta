@@ -5,126 +5,106 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.home.HomeFragment" >
-    <RelativeLayout
-        android:layout_width="371dp"
-        android:layout_height="200dp"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="80dp"
-        android:background="@color/ThemeGreen"
-        android:orientation="horizontal"
-        android:id="@+id/PendingRequest">
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_centerHorizontal="true"
-            android:text="Pending Requests"
-            android:textColor="@color/white"
-            android:textSize="25dp"
-            android:layout_marginTop="5dp"
-            android:id="@+id/Heading"/>
+    tools:context=".ui.home.HomeFragment">
 
-        <ImageView
-            android:id="@+id/image"
-            android:layout_width="150dp"
-            android:layout_height="150dp"
-            android:layout_below="@+id/Heading"
-            android:layout_marginStart="10dp"
-            android:layout_marginTop="10dp"
-            android:src="@drawable/images"/>
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="KDM Earphones"
-            android:textColor="@color/white"
-            android:layout_toRightOf="@+id/image"
-            android:layout_alignTop="@+id/image"
-            android:layout_marginTop="18dp"
-            android:layout_marginLeft="25dp"
-            android:id="@+id/nameOfProduct"/>
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="KDM wired earphones K-10 white colour ."
-            android:textColor="@color/white"
-            android:layout_toRightOf="@+id/image"
-            android:layout_below="@+id/nameOfProduct"
-            android:layout_marginLeft="25dp"
-            android:layout_marginTop="15dp"
-            android:id="@+id/detailOfProduct"/>
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Rs. 100"
-            android:textColor="@color/white"
-            android:layout_toRightOf="@+id/image"
-            android:layout_below="@+id/detailOfProduct"
-            android:layout_marginLeft="25dp"
-            android:layout_marginTop="15dp"
-            android:id="@+id/price"/>
-
-    </RelativeLayout>
-    <RelativeLayout
-        android:layout_width="371dp"
-        android:layout_height="200dp"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="50dp"
-        android:background="@color/ThemeGreen"
-        android:layout_below="@+id/PendingRequest"
-        android:orientation="horizontal"
-        android:id="@+id/approvedRequest">
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_centerHorizontal="true"
-            android:text="Approved Requests"
-            android:textColor="@color/white"
-            android:textSize="25dp"
-            android:layout_marginTop="5dp"
-            android:id="@+id/Heading1"/>
-
-        <ImageView
-            android:id="@+id/image1"
-            android:layout_width="150dp"
-            android:layout_height="150dp"
-            android:layout_below="@+id/Heading1"
-            android:layout_marginStart="10dp"
-            android:layout_marginTop="-3dp"
-            android:src="@drawable/image2" />
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Apple Ligthning Cable"
-            android:textColor="@color/white"
-            android:layout_toRightOf="@+id/image1"
-            android:layout_alignTop="@+id/image1"
-            android:layout_marginTop="18dp"
-            android:layout_marginLeft="25dp"
-            android:id="@+id/nameOfProduct1"/>
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Original Lightning to Usb cable from Apple. 2 months old"
-            android:textColor="@color/white"
-            android:layout_toRightOf="@+id/image1"
-            android:layout_below="@+id/nameOfProduct1"
-            android:layout_marginLeft="25dp"
-            android:layout_marginTop="15dp"
-            android:id="@+id/detailOfProduct1"/>
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Rs. 300"
-            android:textColor="@color/white"
-            android:layout_toRightOf="@+id/image1"
-            android:layout_below="@+id/detailOfProduct1"
-            android:layout_marginLeft="25dp"
-            android:layout_marginTop="10dp"
-            android:id="@+id/price1"/>
-
-    </RelativeLayout>
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
 
 
+            <RelativeLayout
+                android:layout_width="371dp"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="16dp"
+                android:padding="8dp"
+                android:background="@color/ThemeGreen"
+                android:id="@+id/pendingBox">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:text="Pending Requests"
+                android:textColor="@color/white"
+                android:textSize="25dp"
+                android:layout_marginTop="5dp"
+                android:id="@+id/Heading"/>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recyclerView"
+                android:layout_width="371dp"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+               android:layout_below="@+id/Heading"
+                android:layout_marginTop="16dp"
+                android:padding="8dp" />
+            </RelativeLayout>
+            <RelativeLayout
+                android:layout_width="371dp"
+                android:layout_height="220dp"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="16dp"
+                android:background="@color/ThemeGreen"
+                android:layout_below="@+id/pendingBox"
+                android:id="@+id/approvedRequest">
+
+                <TextView
+                    android:id="@+id/Heading1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:text="Approved Requests"
+                    android:textColor="@color/white"
+                    android:textSize="25dp"
+                    android:layout_marginTop="8dp"/>
+
+                <ImageView
+                    android:id="@+id/image1"
+                    android:layout_width="150dp"
+                    android:layout_height="150dp"
+                    android:layout_below="@id/Heading1"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="8dp"
+                    android:src="@drawable/image2" />
+
+                <TextView
+                    android:id="@+id/nameOfProduct1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Apple Lightning Cable"
+                    android:textColor="@color/white"
+                    android:layout_toRightOf="@id/image1"
+                    android:layout_alignTop="@id/image1"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="16dp"/>
+
+                <TextView
+                    android:id="@+id/detailOfProduct1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Original Lightning to Usb cable from Apple. 2 months old"
+                    android:textColor="@color/white"
+                    android:layout_toRightOf="@id/image1"
+                    android:layout_below="@id/nameOfProduct1"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="8dp"/>
+
+                <TextView
+                    android:id="@+id/price1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Rs. 300"
+                    android:textColor="@color/white"
+                    android:layout_toRightOf="@id/image1"
+                    android:layout_below="@id/detailOfProduct1"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="8dp"/>
+            </RelativeLayout>
+        </RelativeLayout>
+    </ScrollView>
 </RelativeLayout>

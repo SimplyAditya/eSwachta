@@ -157,6 +157,7 @@ public class selectAddress extends AppCompatActivity {
                                         } else {
                                             // sign Up fails,.
                                             Toast.makeText(selectAddress.this, "Registration Failed", Toast.LENGTH_SHORT).show();
+
                                             Intent failure=new Intent(selectAddress.this,MainActivity.class);
                                         }
                                     }

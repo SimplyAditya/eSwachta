@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <RelativeLayout
+        android:layout_width="371dp"
+        android:layout_height="wrap_content"
+        android:background="@color/ThemeBlue"
+        android:orientation="horizontal"
+        android:id="@+id/PendingRequest">
+
+
+        <ImageView
+            android:id="@+id/image"
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="10dp"
+            android:src="@drawable/images"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="KDM Earphones"
+            android:textColor="@color/white"
+            android:layout_toRightOf="@+id/image"
+            android:layout_alignTop="@+id/image"
+            android:layout_marginTop="18dp"
+            android:layout_marginLeft="25dp"
+            android:id="@+id/nameOfProduct"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="KDM wired earphones K-10 white colour ."
+            android:textColor="@color/white"
+            android:layout_toRightOf="@+id/image"
+            android:layout_below="@+id/nameOfProduct"
+            android:layout_marginLeft="25dp"
+            android:layout_marginTop="15dp"
+            android:id="@+id/detailOfProduct"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Rs. 100"
+            android:textColor="@color/white"
+            android:layout_toRightOf="@+id/image"
+            android:layout_below="@+id/detailOfProduct"
+            android:layout_marginLeft="25dp"
+            android:layout_marginTop="15dp"
+            android:id="@+id/price"/>
+
+    </RelativeLayout>
+
+</androidx.cardview.widget.CardView>
